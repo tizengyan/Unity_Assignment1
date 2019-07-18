@@ -2,10 +2,10 @@
 
 public class BulletMover : MonoBehaviour {
     Rigidbody rb;
-    float speed = 30f;
+    public float speed = 40f;
     void Start() {
         rb = GetComponent<Rigidbody>();
-        rb.velocity = Vector3.forward * speed;
+        rb.velocity = transform.up * speed;
     }
 
     void OnTriggerEnter(Collider other) {

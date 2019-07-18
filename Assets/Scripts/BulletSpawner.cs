@@ -2,6 +2,7 @@
 
 public class BulletSpawner : MonoBehaviour {
     public GameObject bulletPrefab;
+    public GameObject firePoint;
 
     void Update() {
         if (Input.GetButtonDown("Fire1"))
@@ -9,7 +10,7 @@ public class BulletSpawner : MonoBehaviour {
     }
 
     void spawnBullet() {
-        GameObject clone = Instantiate(bulletPrefab, gameObject.transform.position, gameObject.transform.rotation);
+        GameObject clone = Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation * Quaternion.Euler(90, 0, 0));
         Destroy(clone, 5);
     }
 }
