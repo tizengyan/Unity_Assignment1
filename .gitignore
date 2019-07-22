@@ -6,8 +6,7 @@
 Assets/AssetStoreTools*
 
 # Standard Assets
-Assets/Standard Assets
-Assets/SampleScenes
+Assets/AssetsStore
 
 # Visual Studio cache directory
 .vs/

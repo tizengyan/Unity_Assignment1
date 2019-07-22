@@ -2,12 +2,12 @@
 
 public class Aimer : MonoBehaviour {
     Ray ray;
-    Plane plane;
+    Plane plane = new Plane(Vector3.up, Vector3.zero); // 法线方向垂直向上，与原点重合的plane
     float dis;
 
     void Update() {
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        plane = new Plane(Vector3.up, Vector3.zero);
+        Debug.Log("pos1: " + dis);
         if(plane.Raycast(ray, out dis)) {
             Vector3 target = ray.GetPoint(dis);
             Vector3 direction = target - transform.position;

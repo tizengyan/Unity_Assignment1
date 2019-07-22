@@ -11,5 +11,7 @@ public class BulletMover : MonoBehaviour {
     void OnTriggerEnter(Collider other) {
         if(other.tag != "Player")
             Destroy(gameObject);
+        if (other.tag == "Enemy")
+            other.GetComponent<Enemy>().takeDamage();
     }
 }
